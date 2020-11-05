@@ -246,8 +246,8 @@ transform: scale(1.05);}
 }
 
 /* When the input field gets focus, change its width to 100% */
-#search input[type=text]:focus {
-  width: 100%;
+#search input[type=text]:hover {
+  width: 90%;
 }
 
 

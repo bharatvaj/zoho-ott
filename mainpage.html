@@ -11,6 +11,8 @@
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
     <script type="module" src="assets/js/script.js"></script>
+
+
 </head>
 
 <body ng-app="bingeApp">
@@ -27,7 +29,7 @@
                         <li class="nav-item">
                             <a class="nav-link nav__link " href="#!library">Library</a>
                         </li>
-                      
+
                     </ul>
 
                 </span>
@@ -49,6 +51,9 @@
                                 <a href="index.html">Sign out</a>
                             </span>
                         </li>
+                        <li>
+
+                        </li>
 
                     </ul>
                 </span>
@@ -56,26 +61,31 @@
         </nav>
 
         <div style="float: right;" class="filSoBtnMargin">
-                <div class="dropdown">
-                    <button class="dropbtn">Filter</button>
-                    <div class="dropdown-content">
-                        <a href="#">Genre</a>
-                        <a href="#">Language</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button class="dropbtn">Sort</button>
-                    <div class="dropdown-content">
-                        <a href="#">Rating</a>
-                        <a href="#">Recently Added</a>
-                    </div>
+            <div class="dropdown">
+                <button class="dropbtn">Filter</button>
+                <div class="dropdown-content">
+                    <a href="#">Genre</a>
+                    <a href="#">Language</a>
                 </div>
             </div>
 
+            <div class="dropdown">
+                <button class="dropbtn">Sort</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="GenreSort()">Rating</a>
+                    <a href="#">Recently Added</a>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="clearButton()">Clear</button>
+
+
     </div>
 
-    <div  style="width: 100%;" ng-view class="defaultMargin"></div>
+
+    <div style="width: 100%;" ng-view class="defaultMargin"></div>
+
 
 </body>
 

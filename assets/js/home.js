@@ -15,3 +15,29 @@ for (var i = 0; i < obj.length; i++) {
 
 }
 
+//sort
+
+function sortByGenre(property){
+    return function(a,b){
+        if(a[property] > b[property])
+        return 1;
+        else if (a[property] < b[property])
+        return -1;
+        return 0;
+        
+    }
+    
+}
+function GenreSort(){
+var sortedMovieArray = obj.sort(sortByGenre("rating"));
+console.log(obj);
+console.log(sortedMovieArray);
+    localStorage.setItem('sortedMovie', JSON.stringify(sortedMovieArray));
+}
+
+function clearButton(){
+localStorage.removeItem('sortedMovie');
+console.log("sortedMovie");
+}
+
+    
