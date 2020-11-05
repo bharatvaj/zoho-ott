@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Binge | Home</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
+</head>
+
+<body ng-app="bingeApp">
+
+    <div class="sticky-top nav-blur">
+
+        <div class="main-navbar ">
+            <nav class="navbar navbar-expand navbar-dark">
+                <span class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a style="color: orange;" class="nav-link nav__link " href="#/" data-link>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav__link " href="#!library">Library</a>
+                        </li>
+                      
+                    </ul>
+
+                </span>
+                <span>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li id="search">
+                            <input type="text" name="search" placeholder="Search...">
+                        </li>
+
+                        <li>
+                            <a href="#"><img class="main-nav-img" src="./assets/img/main-page/settings.png"
+                                    alt="settings"></a>
+                        </li>
+
+                        <li class="userDropdown">
+                            <img class="main-nav-img" src="./assets/img/main-page/user.png" alt="user">
+                            <span class="userDropdown-content">
+                                <a href="index.html">Sign out</a>
+                            </span>
+                        </li>
+
+                    </ul>
+                </span>
+        </div>
+        </nav>
+
+        <div style="float: right;" class="filSoBtnMargin">
+                <div class="dropdown">
+                    <button class="dropbtn">Filter</button>
+                    <div class="dropdown-content">
+                        <a href="#">Genre</a>
+                        <a href="#">Language</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Sort</button>
+                    <div class="dropdown-content">
+                        <a href="#">Rating</a>
+                        <a href="#">Recently Added</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <div  style="width: 100%;" ng-view class="defaultMargin"></div>
+
+</body>
+
+</html>
