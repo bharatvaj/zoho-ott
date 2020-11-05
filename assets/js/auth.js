@@ -30,13 +30,12 @@ const register = (ev) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('submit').addEventListener('click', register);
+    document.getElementById('register').addEventListener('click', register);
 });
 
 
 let usrVar = document.querySelector("#usr");
 let passVar = document.querySelector("#pass");
-let submit = document.querySelector("#submit");
 
 let message = document.querySelector(".message");
 
@@ -49,10 +48,12 @@ function signIn() {
         var password = users[i]["password"];
 
         if (username == usrVar.value && passVar.value == password) {
-            window.location.href="mainpage.html";
+
             message.innerHTML = "Login successfull";
-            var currentUser = username;
-            localStorage.setItem('currentUser',currentUser);
+            // var currentUser = username;
+            // localStorage.setItem('currentUser',currentUser);
+                                    window.location.href="mainpage.html";
+
   
             break;
         } else {
