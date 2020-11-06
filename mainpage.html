@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Binge | Home</title>
+    <title>Binge</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/jquery.min.js"></script>
@@ -11,8 +11,8 @@
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
     <script type="module" src="assets/js/script.js"></script>
-
-
+        <script type="module" src="assets/js/home.js"></script>
+        
 </head>
 
 <body ng-app="bingeApp">
@@ -60,6 +60,8 @@
         </div>
         </nav>
 
+        <a id="clrButton" hidden style="color: orange;" onclick="clearButton()">Clear</a>
+
         <div style="float: right;" class="filSoBtnMargin">
             <div class="dropdown">
                 <button class="dropbtn">Filter</button>
@@ -72,13 +74,12 @@
             <div class="dropdown">
                 <button class="dropbtn">Sort</button>
                 <div class="dropdown-content">
-                    <a href="#" onclick="GenreSort()">Rating</a>
-                    <a href="#">Recently Added</a>
+                    <a style="color: orange;" onclick="ratingSort()">Rating</a>
+                    <a style="color: orange;" onclick="recentSort()">Recently Added</a>
                 </div>
             </div>
         </div>
 
-        <button onclick="clearButton()">Clear</button>
 
 
     </div>

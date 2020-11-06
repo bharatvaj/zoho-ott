@@ -9,6 +9,12 @@ app.config(function ($routeProvider) {
         .when("/library", {
             templateUrl: "library.html"
         })
+        //    .when("/RateSort", {
+        //     templateUrl: "rateSort.html"
+        // })
+        //    .when("/RecentSort", {
+        //     templateUrl: "recentSort.html"
+        // })
 });
 
 
