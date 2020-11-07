@@ -19,9 +19,21 @@ white-space: normal;}
   overflow: scroll;
  }
 
- .subnav a:hover{
-   color: orange;
+ 
+ .loginBtn{
+  background-color: rgba(0, 0, 0, 0.50);
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  border-width: 0;
+  border-radius: 5px;
+    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: ease 0.3s;
  }
+
+ .loginBtn:hover{
+background-color: rgba(255, 255, 255, 0.5); }
 
 
 .centerCont{
@@ -141,6 +153,8 @@ display: inline-block;
   backdrop-filter: blur(10px);
 }
 
+
+
 .dropdown-content a {
   color: white;
   padding: 14px;
@@ -161,8 +175,10 @@ transform: scale(1.05);}
 
 .dropdown:hover .dropbtn {
   background-color: rgba(0, 0, 0, 0.50);
-  
 }
+
+
+
 
 /* User*/
 .userDropdown {
@@ -276,6 +292,7 @@ transform: scale(1.05);}
   width: 90%;
 }
 
-
-
-
+#settings:hover{
+  transition: ease 1s;
+transform: rotate(360deg);
+}

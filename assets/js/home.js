@@ -35,13 +35,23 @@ if (obj === null) {
 }
 display(obj);
 
-//Filter
 function filterByGenre(arr, genre) {
     return arr.filter(MovieList => MovieList.genre === genre);
 }
 
 
-function filterBtn(genre) {
+function filterByLang(arr, language) {
+    return arr.filter(MovieList => MovieList.language === language);
+}
+function filterLangBtn(language) {
+    var filteredLangArray = [...obj];
+    filteredLangArray = filterByLang(filteredLangArray, language);
+    display(filteredLangArray);
+    console.log(filteredLangArray);
+    showClearButton(true);
+}
+
+function filterGenreBtn(genre) {
     var filteredGenreArray = [...obj];
     filteredGenreArray = filterByGenre(filteredGenreArray, genre);
     display(filteredGenreArray);
@@ -49,35 +59,41 @@ function filterBtn(genre) {
     showClearButton(true);
 }
 
-let genres = constants.genres;
-let languages = constants.languages;
+//Filter
+function homeInit(){
+    if($("#genreBtnContainer").children().length > 1 ){
+        return;
+    }
 
-for (let i = 0; i < genres.length; i++) {
-    let aTag = `
-    <a style="display: inline-block;" onclick="filterBtn('${genres[i]}')">${genres[i]}</a>
+    if($("#languageBtnContainer").children().length > 1 ){
+        return ;
+    }
+
+  let genres = ["Action", "Adventure", "Drama", "Horror"];
+
+    for (let i = 0; i < genres.length; i++) {
+        let aTag = `
+    <a style="display: inline-block;" onclick="filterGenreBtn('${genres[i]}')">${genres[i]}</a>
     `;
-    $("#genreBtnContainer").append(aTag);
-}
+        $("#genreBtnContainer").append(aTag);
+        
+    }
+  
+  let  languages =  ["Arabic","English","Hindi","Tamil"];
 
-function filterByLang(arr, language) {
-    return arr.filter(MovieList => MovieList.language === language);
-}
 
-
-for (let i = 0; i < languages.length; i++) {
-    let aTag = `
-    <a style="display: inline-block;" onclick="filterBtn('${languages[i]}')">${languages[i]}</a>
+    for (let i = 0; i < languages.length; i++) {
+        let aTag = `
+    <a style="display: inline-block;" onclick="filterLangBtn('${languages[i]}')">${languages[i]}</a>
     `;
-    $("#languageBtnContainer").append(aTag);
-}
+        $("#languageBtnContainer").append(aTag);
+    }
 
-function filterBtn(language) {
-    var filteredLangArray = [...obj];
-    filteredLangArray = filterByLang(filteredLangArray,language)
-    display(filteredLangArray);
-    console.log(filteredLangArray);
-    showClearButton(true);
+
 }
+     
+homeInit();
+
 //Clear
 function showClearButton(doShow) {
     let clrButton = document.getElementById('clrButton');
@@ -124,4 +140,8 @@ function recentSort() {
 function clearButton() {
     display(obj);
     showClearButton(false);
+}
+
+function signOut() {
+    localStorage.removeItem("currentUser");
 }

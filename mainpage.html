@@ -10,8 +10,10 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
-    <script src="assets/js/constants.js"></script>
+    <!-- <script src="assets/js/constants.js"></script> -->
     <script type="module" src="assets/js/script.js"></script>
+        <!-- <script type="module" src="assets/js/home.js"></script> -->
+    <script src="assets/js/denyAccess.js"></script>
 </head>
 
 <body ng-app="bingeApp">
@@ -23,10 +25,10 @@
                 <span class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a style="color: orange;" class="nav-link nav__link " href="#/" data-link>Home</a>
+                            <a style="color: orange;" class="nav-link nav__link " href="#/" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav__link " href="#!library">Library</a>
+                            <a class="nav-link nav__link " href="#!library" >Library</a>
                         </li>
 
                     </ul>
@@ -40,18 +42,15 @@
                         </li>
 
                         <li>
-                            <a href="#"><img class="main-nav-img" src="./assets/img/main-page/settings.png"
+                            <a href=""><img id="settings" class="main-nav-img" src="./assets/img/main-page/settings.png"
                                     alt="settings"></a>
                         </li>
 
                         <li class="userDropdown">
                             <img class="main-nav-img" src="./assets/img/main-page/user.png" alt="user">
                             <span class="userDropdown-content">
-                                <a href="index.html">Sign out</a>
+                                <a href="index.html" onclick="signOut()">Sign out</a>
                             </span>
-                        </li>
-                        <li>
-
                         </li>
 
                     </ul>
@@ -66,18 +65,14 @@
                 <div class="dropdown-content">
                     <div class="subnav">
 
-
-                        <div id="genreBtnContainer" style="color: white;">
+                        <div id="genreBtnContainer" style="color:white;">
                             <p>Genre</p>
                         </div>
-                        <div id="languageBtnContainer" style="color: white;">
+                        <div id="languageBtnContainer" style="color: white;"> 
 
                             <p>Language</p>
-              
 
                         </div>
-
-
 
                     </div>
                 </div>
@@ -87,11 +82,11 @@
             <div class="dropdown">
                 <button class="dropbtn">Sort</button>
                 <div class="dropdown-content">
-                    <a href="" onclick="ratingSort()">Rating</a>
-                    <a href="" onclick="recentSort()">Recently Added</a>
+                    <a onclick="ratingSort()">Rating</a>
+                    <a onclick="recentSort()">Recently Added</a>
                 </div>
             </div>
-            <a href="" id="clrButton" hidden style="color: orange;" onclick="clearButton()">Clear</a>
+            <a id="clrButton" hidden style="color: orange;" onclick="clearButton()">Clear</a>
 
         </div>
 

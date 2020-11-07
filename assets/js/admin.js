@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn').addEventListener('click', addMovie);
 });
 
-// //sort
-
-// var sortedMovies = MovieList.sort(function(a,b){
-//     return a.title - b.title
-// })
-
-// console.log(sortedMovies);
+function signOut(){
+    localStorage.removeItem("currentUser");
+}
