@@ -50,8 +50,8 @@ function signIn() {
         if (username == usrVar.value && passVar.value == password) {
 
             message.innerHTML = "Login successfull";
-            // var currentUser = username;
-            // localStorage.setItem('currentUser',currentUser);
+            var currentUser = username;
+            localStorage.setItem('currentUser',currentUser);
                                     window.location.href="mainpage.html";
 
   
@@ -60,5 +60,8 @@ function signIn() {
             message.innerHTML = "Login failed";
         }
     }
+
 }
+
+
 

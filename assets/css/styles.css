@@ -10,6 +10,20 @@ body {
   animation: gradient 30s ease-in infinite;
 white-space: normal;}
 
+.subnav{
+  background-color: rgba(0, 0, 0, 0.50);
+  border-radius: 10px;
+  padding: 2%;
+  width: 40vw;
+  height: 100%;
+  overflow: scroll;
+ }
+
+ .subnav a:hover{
+   color: orange;
+ }
+
+
 .centerCont{
   width: 100%;  
   display: -webkit-box;
@@ -84,6 +98,18 @@ p {
 
 
 /* Admin Page */
+
+.selectStyle select{
+display: inline-block;
+  background-color: rgba(0, 0, 0, 0.50);
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  border-width: 0;
+  border-radius: 5px;
+    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 
 
 /* Filter sort */
@@ -219,7 +245,7 @@ transform: scale(1.05);}
 
 
 .filSoBtnMargin {
-  padding-right: 3%;
+  padding-left: 3%;
   padding-top: 1%;
 }
 

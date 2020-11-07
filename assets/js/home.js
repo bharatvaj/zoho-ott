@@ -27,6 +27,7 @@ function display(obj) {
     }
 }
 
+
 // Movie Database Table
 var obj = JSON.parse(localStorage.getItem('MovieList'));
 if (obj === null) {
@@ -54,6 +55,33 @@ function sortByDate(property) {
             return -1;
         return 0;
     }
+}
+
+
+function filterByGenre(arr, genre){
+    return arr.filter(MovieList => MovieList.genre === genre);
+}
+
+function genreFilter(){
+    var filteredGenreArray = [...obj];
+    filteredGenreArray = filterByGenre(filteredGenreArray,$("").val);
+
+    display(filteredGenreArray);
+    console.log(filteredGenreArray);
+    showClearButton(true);
+}
+
+function filterByLang(arr, language){
+    return arr.filter(MovieList => MovieList.language === language);
+}
+
+function LangFilter(){
+    var filteredLangArray = [...obj];
+    filteredLangArray = filterByLang(filteredLangArray, "English");
+
+    display(filteredLangArray);
+    console.log(filteredLangArray);
+    showClearButton(true);
 }
 
 function showClearButton(doShow){
