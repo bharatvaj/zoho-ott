@@ -10,9 +10,8 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/constants.js"></script>
     <script type="module" src="assets/js/script.js"></script>
-    <script type="module" src="assets/js/home.js"></script>
-
 </head>
 
 <body ng-app="bingeApp">
@@ -68,23 +67,13 @@
                     <div class="subnav">
 
 
-                        <div style="color: white;">
+                        <div id="genreBtnContainer" style="color: white;">
                             <p>Genre</p>
-                            <a style="display: inline-block;" href="" value="Action" onclick="genreFilter()">Action</a>
-                            <a style="display: inline-block;" href="" value="Adventure"
-                                onclick="genreFilter()">Adventure</button>
-                            <a style="display: inline-block;" href="" value="Drama"
-                                onclick="genreFilter()">Drama</a>
-                            <a style="display: inline-block;" href="" value="Horror" onclick="genreFilter()">Horror</a>
-                           
                         </div>
-                        <div>
+                        <div id="languageBtnContainer" style="color: white;">
 
-                            <p href="" onclick="">Language</p>
-                            <a style="display: inline-block;" href="" onclick="LangFilter()">Arabic</a>
-                            <a style="display: inline-block;" href="" value="English" onclick="LangFilter()">English</a>
-                            <a style="display: inline-block;" href="" value="Hindi" onclick="LangFilter()">Hindi</a>
-                            <a style="display: inline-block;" href="" value="Tamil" onclick="LangFilter()">Tamil</a>
+                            <p>Language</p>
+              
 
                         </div>
 
@@ -102,7 +91,7 @@
                     <a href="" onclick="recentSort()">Recently Added</a>
                 </div>
             </div>
-            <a id="clrButton" hidden style="color: orange;" onclick="clearButton()">Clear</a>
+            <a href="" id="clrButton" hidden style="color: orange;" onclick="clearButton()">Clear</a>
 
         </div>
 

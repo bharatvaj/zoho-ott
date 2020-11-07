@@ -35,7 +35,57 @@ if (obj === null) {
 }
 display(obj);
 
-// //sort
+//Filter
+function filterByGenre(arr, genre) {
+    return arr.filter(MovieList => MovieList.genre === genre);
+}
+
+
+function filterBtn(genre) {
+    var filteredGenreArray = [...obj];
+    filteredGenreArray = filterByGenre(filteredGenreArray, genre);
+    display(filteredGenreArray);
+    console.log(filteredGenreArray);
+    showClearButton(true);
+}
+
+let genres = constants.genres;
+let languages = constants.languages;
+
+for (let i = 0; i < genres.length; i++) {
+    let aTag = `
+    <a style="display: inline-block;" onclick="filterBtn('${genres[i]}')">${genres[i]}</a>
+    `;
+    $("#genreBtnContainer").append(aTag);
+}
+
+function filterByLang(arr, language) {
+    return arr.filter(MovieList => MovieList.language === language);
+}
+
+
+for (let i = 0; i < languages.length; i++) {
+    let aTag = `
+    <a style="display: inline-block;" onclick="filterBtn('${languages[i]}')">${languages[i]}</a>
+    `;
+    $("#languageBtnContainer").append(aTag);
+}
+
+function filterBtn(language) {
+    var filteredLangArray = [...obj];
+    filteredLangArray = filterByLang(filteredLangArray,language)
+    display(filteredLangArray);
+    console.log(filteredLangArray);
+    showClearButton(true);
+}
+//Clear
+function showClearButton(doShow) {
+    let clrButton = document.getElementById('clrButton');
+    clrButton.hidden = !doShow;
+}
+
+//Sort
+
 
 function sortByRating(property) {
     return function (a, b) {
@@ -55,38 +105,6 @@ function sortByDate(property) {
             return -1;
         return 0;
     }
-}
-
-
-function filterByGenre(arr, genre){
-    return arr.filter(MovieList => MovieList.genre === genre);
-}
-
-function genreFilter(){
-    var filteredGenreArray = [...obj];
-    filteredGenreArray = filterByGenre(filteredGenreArray,$("").val);
-
-    display(filteredGenreArray);
-    console.log(filteredGenreArray);
-    showClearButton(true);
-}
-
-function filterByLang(arr, language){
-    return arr.filter(MovieList => MovieList.language === language);
-}
-
-function LangFilter(){
-    var filteredLangArray = [...obj];
-    filteredLangArray = filterByLang(filteredLangArray, "English");
-
-    display(filteredLangArray);
-    console.log(filteredLangArray);
-    showClearButton(true);
-}
-
-function showClearButton(doShow){
-    let clrButton = document.getElementById('clrButton');
-    clrButton.hidden = !doShow;
 }
 
 function ratingSort() {
