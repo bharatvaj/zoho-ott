@@ -10,7 +10,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
-                    <!-- <script src="assets/js/constants.js"></script> -->
+    <!-- <script src="assets/js/constants.js"></script> -->
     <script src="assets/js/admin.js"></script>
 
 
@@ -20,81 +20,80 @@
 <body>
 
     <section class="defaultMargin">
-        <div class="main-navbar ">
+        <div class="admin-navbar">
             <nav class=" navbar navbar-expand">
                 <span class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <p style="color: orange;font-size: 2em;">Admin Console</p>
+                            <p style="color: orange;font-size: 1.5em;">Admin Console</p>
                         </li>
-
                     </ul>
                 </span>
                 <span>
                     <ul class="navbar-nav navbar-right">
-                    
-                                <a href="index.html" onclick="signOut()">Sign out</a>
+
+                        <a href="index.html" style="color: white;text-decoration: none;" onclick="signOut()" class="loginBtn">Sign out</a>
 
                     </ul>
                 </span>
         </div>
         <br>
-        <section class="row">
+        <section class="row defaultMargin">
 
-            <span class=" col defaultMargin" style="width: 50%;">
-                <p style="font-weight: 250;font-size: 2em;" class="adminText">Upload new content</p>
+            <span class=" col-4  adminContainer" style="width: 50%; height: 75vh;margin-right: 2%;">
+                <p style="font-weight: 200;font-size: 1.5em;" class="adminText">Upload new content</p>
 
                 <form style="font-weight: 600;" class="adminText">
 
 
                     <label for="myfile">Thumbnail</label> <br>
                     <input type="file" id="titleImage" name="titleImage" accept="image/jpg, image/jpeg, image/png">
-                    <br><br>
+                    <br>
                     <label for="title">Title Name</label> <br>
                     <input type="text" id="title" placeholder="Title Name" /> <br>
 
                     <label for="description">Description</label> <br>
                     <input type="text" id="description" placeholder="Description" /> <br>
 
-<div class="selectStyle">                  <label for="genre">Genre</label><br>
-                    <select name="genre" id="genre">
-                        <optgroup label="Genre">
-                            <option value="Action">Action</option>
-                            <option value="Adventure">Adventure</option>
-                            <option value="Drama">Drama</option>
-                            <option value="Horro">Horror</option>
+                    <div class="selectStyle"> <label for="genre">Genre</label><br>
+                        <select name="genre" id="genre">
+                            <optgroup label="Genre">
+                                <option value="Action">Action</option>
+                                <option value="Adventure">Adventure</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Horro">Horror</option>
                             </optgroup>
-                    </select></div>
-  
-<div class="selectStyle">             <label for="language">Langauge</label><br>
-                    <select name="language" id="language">
-                        <optgroup label="Language">
-                            <option value="Arabic">Arabic</option>
-                            <option value="English">English</option>
-                            <option value="Hindi">Hindi</option>
-                            <option value="Tamil">Tamil</option>
-                            <br>
-                        </optgroup>
                         </select></div>
-       
 
-                            <label for="rating">Rating</label> <br>
-                            <input type="text" id="rating" placeholder="Rating" /> <br>
+                    <div class="selectStyle"> <label for="language">Langauge</label><br>
+                        <select name="language" id="language">
+                            <optgroup label="Language">
+                                <option value="Arabic">Arabic</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Tamil">Tamil</option>
+                                <br>
+                            </optgroup>
+                        </select></div>
 
-                            <label for="dateAdded">Date Added</label> <br>
-                            <input type="text" id="dateAdded" placeholder="Date Added" /> <br>
 
-                            <div class="formBox">
-                                <button id="btn" class="rounded"
-                                    style="background:rgba(102, 102, 102, 0.205); border: white;color: orange;">ADD</button>
-                            </div>
+                    <label for="rating">Rating</label> <br>
+                    <input type="text" id="rating" placeholder="Rating" /> <br>
+
+                    <label for="dateAdded">Date Added</label> <br>
+                    <input type="text" id="dateAdded" placeholder="Date Added" /> <br>
+
+                    <div class="formBox">
+                        <button id="btn" class="rounded"
+                            style="background:rgba(0, 0, 0, 0.5); border: white;color: orange;">ADD</button>
+                    </div>
                 </form>
             </span>
 
             <!-- Library Table -->
 
             <div style="color: white;width: 50%;" class="col defaultMargin adminContainer">
-                <p style="font-weight: 250;font-size: 2em;position: relative;">Library</p>
+                <p style="font-weight: 200;font-size: 1.5em;position: relative;">Library</p>
 
                 <div class="movieInfo"></div>
 

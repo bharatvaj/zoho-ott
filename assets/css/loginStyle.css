@@ -1,7 +1,6 @@
 .formCenter{
-
 width: 100%;  
-  min-height: 85vh;
+  min-height: 90vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -10,5 +9,14 @@ width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
 }
