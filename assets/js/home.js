@@ -12,7 +12,17 @@ function display(obj) {
         <h5 class="card-title" style="font-weight:700;color: rgba(255, 255, 255, 0.623);">${obj[i]["title"]}</h5>
         <p class="card-text" style="color: white;">${obj[i]["description"]}</p> 
         <p class="card-text" style="color: white;"> ${obj[i]["genre"]+ "-" + obj[i]["language"]}</p>
-        <p class="card-text" style="color: white;">${obj[i]["rating"]}</p>
+        <span class="card-text" style="color:white;">
+            ${obj[i].rating}
+            <select onchange="ratingChange(this, ${titleID})" class="rateSelect" style="float:right;" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <br>
+            </select>
+        </span>
     </div>
     <div class="card-footer">
         <small class="text" style="color: whitesmoke;">${obj[i]["dateAdded"]}</small>
@@ -24,6 +34,27 @@ function display(obj) {
             "style": "width:100%;"
         });
         $(".movieInfo").append(titleCard);
+    }
+}
+
+function updateInLocalStorage(obj){
+    /// stringify global obj and save to localStorage
+    localStorage.setItem("MovieList", JSON.stringify(obj));
+}
+
+function getMoviesList(){
+    return JSON.parse(localStorage.getItem("MovieList"));
+}
+
+function ratingChange(ratingSelector, id){
+    var obj = getMoviesList();
+    for(let i = 0; i < obj.length; i++){
+        if(obj[i]["titleID"] == id){
+            obj[i]["rating"] = ratingSelector.value;
+            display(obj);
+            updateInLocalStorage(obj);
+            break;
+        }
     }
 }
 
@@ -144,4 +175,21 @@ function clearButton() {
 
 function signOut() {
     localStorage.removeItem("currentUser");
+}
+
+//replace localStorage value by ID
+// $(function() {
+
+//   $(".changeRating").click(function(e){
+
+//     var newRating = $(".rateSelect").value ;
+//     console.log(newRating);
+//     });
+
+//   });
+
+function changeRatingBtn(){
+var changedRating = [...obj];
+changedRating = $(".rateSelect").value;
+
 }

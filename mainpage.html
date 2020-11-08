@@ -37,26 +37,25 @@
                 <span>
 
                     <ul class="navbar-nav navbar-right">
-                        <li id="search">
+                        <!-- <li id="search">
                             <input type="text" name="search" placeholder="Search...">
-                        </li>
+                        </li> -->
+<!-- 
+                        <li>
+                            <a href=""><img class="main-nav-img" src="./assets/img/main-page/settings.png"
+                                    alt="settings"></a>
+                        </li> -->
 
                         <li>
-                            <a href=""><img id="settings" class="main-nav-img" src="./assets/img/main-page/settings.png"
-                                    alt="settings"></a>
-                        </li>
 
-                        <li class="userDropdown">
-                            <img class="main-nav-img" src="./assets/img/main-page/user.png" alt="user">
-                            <span class="userDropdown-content">
-                                <a href="index.html" onclick="signOut()">Sign out</a>
-                            </span>
+                            <a href="index.html" onclick="signOut()"><img class="main-nav-img"
+                                    src="./assets/img/main-page/signOut.png" alt="signOut"></a>
                         </li>
 
                     </ul>
                 </span>
         </div>
-        </nav>
+        
 
 
         <div style="float: left;" class="filSoBtnMargin">
@@ -82,7 +81,7 @@
             <div class="dropdown">
                 <button class="dropbtn">Sort</button>
                 <div class="dropdown-content">
-                    <a style="color: white;"onclick="ratingSort()">Rating</a>
+                    <a style="color: white;" onclick="ratingSort()">Rating</a>
                     <a style="color: white;" onclick="recentSort()">Recently Added</a>
                 </div>
             </div>

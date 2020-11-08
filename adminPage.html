@@ -20,7 +20,7 @@
 <body>
 
     <section class="defaultMargin">
-        <div class="admin-navbar">
+        <div class="main-navbar">
             <nav class=" navbar navbar-expand">
                 <span class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -31,8 +31,9 @@
                 </span>
                 <span>
                     <ul class="navbar-nav navbar-right">
+<li>                      <a href="index.html" onclick="signOut()"><img class="main-nav-img"
+                                    src="./assets/img/main-page/signOut.png" alt="signOut"></a></li>
 
-                        <a href="index.html" style="color: white;text-decoration: none;" onclick="signOut()" class="loginBtn">Sign out</a>
 
                     </ul>
                 </span>
@@ -76,12 +77,21 @@
                             </optgroup>
                         </select></div>
 
-
-                    <label for="rating">Rating</label> <br>
-                    <input type="text" id="rating" placeholder="Rating" /> <br>
+                    <div class="selectStyle"> <label for="rating">Rating</label> <br>
+                        <select name="rating" id="rating">
+                            <optgroup label="Rate">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <br>
+                            </optgroup>
+                        </select></div>
+                    <br>
 
                     <label for="dateAdded">Date Added</label> <br>
-                    <input type="text" id="dateAdded" placeholder="Date Added" /> <br>
+                    <input type="text" id="dateAdded" placeholder="Date Added" /> <br><br>
 
                     <div class="formBox">
                         <button id="btn" class="rounded"
