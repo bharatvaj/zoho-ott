@@ -4,6 +4,10 @@ var users = JSON.parse(localStorage.getItem('userList'));
 if (users === null) {
     users = [];
 }
+let usrVar = document.querySelector("#usr");
+let passVar = document.querySelector("#pass");
+
+let message = document.querySelector(".message");
 
 // for (var i = 0; i < users.length; i++) {
 //     var username = users[i]["usr"];
@@ -23,7 +27,9 @@ const register = (ev) => {
 
     localStorage.setItem('userList', JSON.stringify(users));
 
-                message.innerHTML = "Registration Successfull!";
+ 
+    message.innerHTML = "<p style=\"text-align:center;\">Registration complete</p>";
+ 
 
 
 
@@ -34,10 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-let usrVar = document.querySelector("#usr");
-let passVar = document.querySelector("#pass");
-
-let message = document.querySelector(".message");
 
 //Sign in
 
@@ -51,10 +53,16 @@ function signIn() {
 
             message.innerHTML = "Login successfull";
             var currentUser = username;
-            localStorage.setItem('currentUser',currentUser);
-                                    window.location.href="mainpage.html";
+            localStorage.setItem('currentUser', currentUser);
+            window.location.href = "mainpage.html";
+        } else if ("admin" == usrVar.value && "password" == passVar.value) {
+            var currentUser = usrVar.value;
+            localStorage.setItem('currentUser', currentUser);
+            window.location.href = "adminPage.html";
+            break;
+        } else if (usrVar.value == "" || passVar.value == "") {
 
-  
+            message.innerHTML = "Username or password is missing<br><p style=\"color:grey;font-size:0.8em;text-align:center;\">Please contact administrator</p>";
             break;
         } else {
             message.innerHTML = "Login failed";
@@ -62,6 +70,3 @@ function signIn() {
     }
 
 }
-
-
-

@@ -7,12 +7,15 @@ function display(obj) {
         var titleID = obj[i]["titleID"];
         var titleCard = `
 <div class="card cardBlur" style="width: 16rem;display:inline-block;">
-    <img class="card-img-top" src="${"./assets/img/main-page/" + obj[i]["titleImage"]}" alt="Card image cap">
+    <img  class="card-img-top" src="${"./assets/img/main-page/" + obj[i]["titleImage"]}" alt="TitleImageHolder">
     <div class="card-body" >
-        <h5 class="card-title" style="font-weight:700;color: rgba(255, 255, 255, 0.623);">${obj[i]["title"]}</h5>
+        <h5 class="card-title" style="font-weight:700;color: rgba(255, 255, 255, 0.8);">${obj[i]["title"]}</h5>
+                <p style="color:grey;font-size:0.7em;">Description</p>
         <p class="card-text" style="color: white;">${obj[i]["description"]}</p> 
-        <p class="card-text" style="color: white;"> ${obj[i]["genre"]+ "-" + obj[i]["language"]}</p>
-        <span class="card-text" style="color:white;">
+                <p style="color:grey;font-size:0.7em;">Genre & Language</p>
+        <p class="card-text" style="color: white;"> ${obj[i]["genre"]+ " - " + obj[i]["language"]}</p>
+        <p style="color:grey;font-size:0.7em;">Rating</p>
+        <span class="card-text" style="color:#c2b280;">
             ${obj[i].rating}
             <select onchange="ratingChange(this, ${titleID})" class="rateSelect" style="float:right;" name="rating">
                 <option value="1">1</option>
@@ -25,7 +28,7 @@ function display(obj) {
         </span>
     </div>
     <div class="card-footer">
-        <small class="text" style="color: whitesmoke;">${obj[i]["dateAdded"]}</small>
+        <small class="text" style="color: whitesmoke;">Added : ${obj[i]["dateAdded"]}</small>
     </div>
 </div>
 `;
@@ -136,9 +139,9 @@ function showClearButton(doShow) {
 
 function sortByRating(property) {
     return function (a, b) {
-        if (a[property] > b[property])
+        if (a[property] < b[property])
             return 1;
-        else if (a[property] < b[property])
+        else if (a[property] > b[property])
             return -1;
         return 0;
     }
@@ -146,9 +149,9 @@ function sortByRating(property) {
 
 function sortByDate(property) {
     return function (a, b) {
-        if (a[property] > b[property])
+        if (a[property] < b[property])
             return 1;
-        else if (a[property] < b[property])
+        else if (a[property] > b[property])
             return -1;
         return 0;
     }
@@ -175,6 +178,7 @@ function clearButton() {
 
 function signOut() {
     localStorage.removeItem("currentUser");
+    window.location.href="index.html";
 }
 
 //replace localStorage value by ID

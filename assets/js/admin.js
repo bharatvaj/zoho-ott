@@ -1,7 +1,7 @@
 
 
 // Admin Script
-
+var d = new Date();
 var movies = JSON.parse(localStorage.getItem('MovieList'));
 if (movies === null){
     movies = [];
@@ -17,7 +17,7 @@ const addMovie = (ev) => {
         genre: document.getElementById('genre').value,
         language: document.getElementById('language').value,
         rating: document.getElementById('rating').value,
-        dateAdded: document.getElementById('dateAdded').value
+        dateAdded: d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + d.getFullYear() + "/" + d.getMonth() + "/" + d.getDate() 
 
     }
     movies.push(movie);
