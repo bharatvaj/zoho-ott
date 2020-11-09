@@ -18,6 +18,7 @@ function display(obj) {
         <span class="card-text" style="color:#c2b280;">
             ${obj[i].rating}
             <select onchange="ratingChange(this, ${titleID})" class="rateSelect" style="float:right;" name="rating">
+                <option value="Rate">Rate</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

@@ -33,8 +33,11 @@ const addMovie = (ev) => {
     localStorage.setItem('MovieList', JSON.stringify(movies));
 }
 document.addEventListener('DOMContentLoaded', () => {
+    
     document.getElementById('btn').addEventListener('click', addMovie);
-});
+}
+
+);
 
 function signOut(){
     localStorage.removeItem("currentUser");
