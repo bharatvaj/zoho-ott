@@ -3,12 +3,8 @@
 **Online Video Streaming Platform**
 
 ## Admin Console
-
-Use the provided credentials for uploading new content to the library.
-
-| Username | Password |
-| ------ | ------ |
-| admin | password |
+ Before accessing the console, register username as `admin` and password of your choice. 
+ - Use the credentials for uploading new content to the library.
 
 ### Note 
 
