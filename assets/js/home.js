@@ -6,7 +6,7 @@ function display(obj) {
     for (var i = 0; i < obj.length; i++) {
         var titleID = obj[i]["titleID"];
         var titleCard = `
-<div class="card cardBlur" style="width: 16rem;display:inline-block;">
+<div class="card cardBlur" style="display:inline-block;">
     <img  class="card-img-top" src="${"./assets/img/main-page/" + obj[i]["titleImage"]}" alt="TitleImageHolder">
     <div class="card-body" >
         <h5 class="card-title" style="font-weight:700;color: rgba(255, 255, 255, 0.8);">${obj[i]["title"]}</h5>
