@@ -197,3 +197,4 @@ var changedRating = [...obj];
 changedRating = $(".rateSelect").value;
 
 }
+
