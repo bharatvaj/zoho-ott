@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //Sign in
 
 function signIn() {
+    
+    
     for (i = 0; i < users.length; i++) {
 
         var username = users[i]["username"];
@@ -54,17 +56,24 @@ function signIn() {
             message.innerHTML = "Login successfull";
             var currentUser = username;
             localStorage.setItem('currentUser', currentUser);
-            window.location.href = "mainpage.html";
-        } else if ("admin" == usrVar.value && "password" == passVar.value) {
-            var currentUser = usrVar.value;
-            localStorage.setItem('currentUser', currentUser);
-            window.location.href = "adminPage.html";
-            break;
-        } else if (usrVar.value == "" || passVar.value == "") {
+            if(username === "admin") {
+                window.location.href = "adminPage.html";
+            } else {
+                window.location.href = "mainpage.html";
+            }
+        }
+        // } else if ("admin" == usrVar.value && "password" == passVar.value) {
+        //     var currentUser = usrVar.value;
+        //     localStorage.setItem('currentUser', currentUser);
+        //     window.location.href = "adminPage.html";
+        //     break;
+        // } 
+        else if (!usrVar.value || !passVar.value) {
 
             message.innerHTML = "Username or password is missing<br><p style=\"color:grey;font-size:0.8em;text-align:center;\">Please contact administrator</p>";
             break;
-        } else {
+        } 
+        else {
             message.innerHTML = "Login failed";
         }
     }
