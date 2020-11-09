@@ -103,7 +103,7 @@ function homeInit(){
         return ;
     }
 
-  let genres = ["Action", "Adventure", "Drama", "Horror"];
+  let genres = ["Action", "Adventure","Animation", "Drama", "Horror","Sci-fi"];
 
     for (let i = 0; i < genres.length; i++) {
         let aTag = `
