@@ -1,6 +1,6 @@
 # Zoho OTT
 
-**Online Video Streaming Platform**<
+**Online Video Streaming Platform**
 
 ## Admin Console
  Before accessing the console, register username as `admin` and password of your choice. 
